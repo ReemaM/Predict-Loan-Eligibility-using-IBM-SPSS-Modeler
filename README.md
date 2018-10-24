@@ -40,4 +40,14 @@ The dataset is taking from [Analytics Vidhya](https://datahack.analyticsvidhya.c
 + **Property_Area**       Urban/ Semi Urban/ Rural
 + **Loan_Status**         Loan approved (Y/N)
 
+## Create a project in Watson Studio 
+From Watson Studio main page, click on `New project`. Choose `Complete` to get full functionalities. Once you enter your project name, click on `Create`.
+![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/1.gif)
+
+
+## Upload the dataset to IBM Watson Studio
+Open `Find and add data`  right-side panel, drag and drop the dataset (.csv file) from your computer to that area.
+![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/1.gif)
+
+
 ## Preparing your data with Jupyter Notebook
