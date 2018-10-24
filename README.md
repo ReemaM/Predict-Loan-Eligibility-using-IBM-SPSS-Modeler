@@ -22,7 +22,9 @@ The overall time of reading and follwing this tutorial is 1 hour approx.
 
 ## Dataset
 The dataset is taking from [Analytics Vidhya](https://datahack.analyticsvidhya.com/contest/practice-problem-loan-prediction-iii/#data_dictionary)
-⋅⋅⋅**The formate of the data:**⋅⋅
+
+
+**The formate of the data:**
 + **Variable**            Description
 + **Loan_ID**             Unique Loan ID
 +**Gender**              Male/ Female
