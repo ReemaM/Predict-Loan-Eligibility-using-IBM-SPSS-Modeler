@@ -1,4 +1,4 @@
-# Predict-Loan-Eligibility-using-Jupyter-Notebook-&-IBM-SPSS-Modeler
+# Predict Loan Eligibility using Jupyter Notebook & IBM SPSS Modeler
 Loans are the core business part of lending companies. The main profit came directly from the loan's interest. The lending companies grant loan after an intensive process of verification and validation. However, they still do not have an assurance if the applicant is able to repay the loan with no difficulties.
 
 ## Problem
@@ -63,22 +63,22 @@ Change Dataframe name from **df_data_1** to **trainData**.
 
 ### Steps to Clean Null values from your Data:
 1. Check the data types of the variables using `dtypes`.
-![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/4.png)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/4.PNG)
 
 2. Check the sum of Null Values.
-![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/5.png)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/5.PNG)
 
 3. Fill-in the null values of `Gender` by the most frequent value.
-![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/6.png)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/6.PNG)
 
 4. Fill-in the null values of `Married` and `Credit_History` by the most frequent value, and `LoanAmount` with the average value.
-![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/7.png)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/7.PNG)
 
 5. Fill-in the null values of `Loan_Amount_Term` with the average value, and `Self_Employed` by the most frequent value. For `Dependents` Fill-in the null values with 0. 
-![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/8.png)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/8.PNG)
 
 7. Now, let's check again the sum of Null values.
-![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/9.png)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/9.PNG)
 we have no null values, and we can proceed of building our model.
 
 But first we have to export the cleaned dataframe to a CSV file, and import it to SPSS Modeler later.
