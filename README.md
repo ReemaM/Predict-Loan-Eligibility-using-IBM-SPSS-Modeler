@@ -47,7 +47,18 @@ From Watson Studio main page, click on `New project`. Choose `Complete` to get f
 
 ## Upload the dataset to IBM Watson Studio
 Open `Find and add data`  right-side panel, drag and drop the dataset (.csv file) from your computer to that area.
-![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/1.gif)
+![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/2.gif)
 
 
 ## Preparing your data with Jupyter Notebook
+### Create a new Notebook:
+1. Go to the Notebooks section in the Asset dashboard of IBM Watson Studio. 
+2. Click on `New Notebook`
+3. Write a name for the notebook.
+4. Click `Create Notebook`
+
+### Insert the data as Panda Dataframe into the notebbok
+![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/3.gif)
+Change Dataframe name from **df_data_1** to **trainData**
+
+
