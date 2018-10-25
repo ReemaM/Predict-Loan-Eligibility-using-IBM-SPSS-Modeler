@@ -118,22 +118,22 @@ Download the file from your Object Storage Service, and upload it to your Data A
 
 ### Build Model
 The model predicts the loan eligibility of two classes (Either Y:Yes or N:No). Thus, the choice of algorithms fell into Bayesian networks since it is known to give good results for predicting classification problem.
-1. Splite Data into training and testing sets using `Partition` node, from Field Operations palette. It will be 
-- Double click Partition node to customize the partition size into 80:20, change the ratio in the `Training Partition` to 80% and `Testing Partition` to 20%.
-{image}
+
+
+1. Splite Data into training and testing sets using `Partition` node, from Field Operations palette.
+- Double click Partition node to customize the partition size into 80:20, change the ratio in the `Training Partition` to 80 and `Testing Partition` to 20.
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/13.gif)
 
 2. Drag and drop the `Bayes Net` node, from the Modeling Palette.
-3. Double click the node to change settings. Check use custom field roles to assign PREDICTION_transformed as the target, and all the remaining attributes except Partition as input. When you finish, click `Save`.
+3. Double click the node to change settings. Check `Use custom field roles` to assign Loan_Status as the target, and all the remaining attributes as input except Partition and Loan_ID. When you finish, click `Save`.
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/14.gif)
 
+4. `Run` your Bayesian Network node, then you will see your model in the orange color node.
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/15.gif)
 
+### View the Model
+- Right click on the orange color node, Click on `View` .
+- Now you can see Network Graph and other model information here.
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/16.gif)
 
-
-
-
- 
-
-
-
-
-
-
+ At the end, you can build more models within the same canvas until you get the result you want.
