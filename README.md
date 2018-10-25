@@ -42,12 +42,18 @@ The dataset is taking from [Analytics Vidhya](https://datahack.analyticsvidhya.c
 
 ## Create a project in Watson Studio 
 From Watson Studio main page, click on `New project`. Choose `Complete` to get full functionalities. Once you enter your project name, click on `Create`.
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/1.gif)
+
 
 
 ## Upload the dataset to IBM Watson Studio
 Open `Find and add data`  right-side panel, drag and drop the dataset (.csv file) from your computer to that area.
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/2.gif)
+
 
 
 ## Preparing your data with Jupyter Notebook
@@ -58,27 +64,51 @@ Open `Find and add data`  right-side panel, drag and drop the dataset (.csv file
 4. Click `Create Notebook`
 
 ### Insert the data as Panda Dataframe into the notebbok
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/3.gif)
+
+
 Change Dataframe name from **df_data_1** to **trainData**.
 
 ### Steps to Clean Null values from your Data:
 1. Check the data types of the variables using `dtypes`.
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/4.PNG)
 
+
 2. Check the sum of Null Values.
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/5.PNG)
 
+
 3. Fill-in the null values of `Gender` by the most frequent value.
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/6.PNG)
 
+
 4. Fill-in the null values of `Married` and `Credit_History` by the most frequent value, and `LoanAmount` with the average value.
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/7.PNG)
 
+
 5. Fill-in the null values of `Loan_Amount_Term` with the average value, and `Self_Employed` by the most frequent value. For `Dependents` Fill-in the null values with 0. 
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/8.PNG)
 
+
+
 7. Now, let's check again the sum of Null values.
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/9.PNG)
+
+
 we have no null values, and we can proceed of building our model.
 
 But first we have to export the cleaned dataframe to a CSV file, and import it to SPSS Modeler later.
@@ -105,7 +135,11 @@ Download the file from your Object Storage Service, and upload it to your Data A
 ### Add and Prepare Data
 1. Add data to the canvas using `Data Asset` node.
 2. Double click the node and click `Change Data Asset` to open the Asset Browser. Select csvtrain.csv then click `OK` and `Save`.
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/10.gif)
+
+
 
 3. Drag and Drop `Type ` node to configure variables type, from Field Operations palette.
 4. Double click the node or right click to open it. 
@@ -113,8 +147,14 @@ Download the file from your Object Storage Service, and upload it to your Data A
 - Change the Role from the drop down menu of [Loan_Status] from input to `output`. 
 - Change the Role drop down menu of [LoanID] from none to `Record ID`.
 - Click `Save`.
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/11.gif)
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/12.gif)
+
+
 
 ### Build Model
 The model predicts the loan eligibility of two classes (Either Y:Yes or N:No). Thus, the choice of algorithms fell into Bayesian networks since it is known to give good results for predicting classification problem.
@@ -122,18 +162,36 @@ The model predicts the loan eligibility of two classes (Either Y:Yes or N:No). T
 
 1. Splite Data into training and testing sets using `Partition` node, from Field Operations palette.
 - Double click Partition node to customize the partition size into 80:20, change the ratio in the `Training Partition` to 80 and `Testing Partition` to 20.
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/13.gif)
+
+
 
 2. Drag and drop the `Bayes Net` node, from the Modeling Palette.
 3. Double click the node to change settings. Check `Use custom field roles` to assign Loan_Status as the target, and all the remaining attributes as input except Partition and Loan_ID. When you finish, click `Save`.
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/14.gif)
 
+
+
 4. `Run` your Bayesian Network node, then you will see your model in the orange color node.
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/15.gif)
+
 
 ### View the Model
 - Right click on the orange color node, Click on `View` .
 - Now you can see Network Graph and other model information here.
+
+
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/16.gif)
 
+
+
  At the end, you can build more models within the same canvas until you get the result you want.
+ 
+## Summary
+In this tutorial, you learned how to create a complete prediction model, from importing data, preparing the data, to training the model. You learned how to use Jupyter Notebook and export files from it, and learned how to use SPSS Modeler.
