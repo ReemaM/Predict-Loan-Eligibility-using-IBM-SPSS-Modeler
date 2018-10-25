@@ -52,7 +52,7 @@ From Watson Studio main page, click on `New project`. Choose `Complete` to get f
 Open `Find and add data`  right-side panel, drag and drop the dataset (.csv file) from your computer to that area.
 
 
-![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/2_1.gif)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/2.gif)
 
 
 
@@ -66,7 +66,7 @@ Open `Find and add data`  right-side panel, drag and drop the dataset (.csv file
 ### Insert the data as Panda Dataframe into the notebbok
 
 
-![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/3_1.gif)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/3.gif)
 
 
 Change Dataframe name from **df_data_1** to **trainData**.
