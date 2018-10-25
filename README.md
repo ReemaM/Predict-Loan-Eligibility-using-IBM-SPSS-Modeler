@@ -42,12 +42,12 @@ The dataset is taking from [Analytics Vidhya](https://datahack.analyticsvidhya.c
 
 ## Create a project in Watson Studio 
 From Watson Studio main page, click on `New project`. Choose `Complete` to get full functionalities. Once you enter your project name, click on `Create`.
-![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/1.gif)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/1.gif)
 
 
 ## Upload the dataset to IBM Watson Studio
 Open `Find and add data`  right-side panel, drag and drop the dataset (.csv file) from your computer to that area.
-![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/2.gif)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/2.gif)
 
 
 ## Preparing your data with Jupyter Notebook
@@ -58,27 +58,27 @@ Open `Find and add data`  right-side panel, drag and drop the dataset (.csv file
 4. Click `Create Notebook`
 
 ### Insert the data as Panda Dataframe into the notebbok
-![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/3.gif)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/3.gif)
 Change Dataframe name from **df_data_1** to **trainData**.
 
 ### Steps to Clean Null values from your Data:
 1. Check the data types of the variables using `dtypes`.
-![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/4.png)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/4.png)
 
 2. Check the sum of Null Values.
-![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/5.png)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/5.png)
 
 3. Fill-in the null values of `Gender` by the most frequent value.
-![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/6.png)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/6.png)
 
 4. Fill-in the null values of `Married` and `Credit_History` by the most frequent value, and `LoanAmount` with the average value.
-![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/7.png)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/7.png)
 
 5. Fill-in the null values of `Loan_Amount_Term` with the average value, and `Self_Employed` by the most frequent value. For `Dependents` Fill-in the null values with 0. 
-![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/8.png)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/8.png)
 
 7. Now, let's check again the sum of Null values.
-![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/9.png)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/9.png)
 we have no null values, and we can proceed of building our model.
 
 But first we have to export the cleaned dataframe to a CSV file, and import it to SPSS Modeler later.
