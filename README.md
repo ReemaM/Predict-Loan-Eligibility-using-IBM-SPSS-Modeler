@@ -8,8 +8,8 @@ Thus, They target those applicants who are eligible for loan amount first.
 ## Learning Objectives
 After completing this tutorial, you will understand how to;
 - [Prepare data with Jupyter Notebook](#Preparing-your-data-with-Jupyter-Notebook)
-- [Export Data from Jupyter Notebook](#)
-- [Build a Machine Learning Model using SPSS Modelr](#)
+- [Export Data from Jupyter Notebook](#Export-CSV-File-from-Jupyter-Notebook)
+- [Build a Machine Learning Model using SPSS Modelr](#Build-a-Machine-Learning-Model-using-SPSS-Modelr)
 
 ## Prerequisites
 In order to complete this tutorial, you will need the following prerequisites:
@@ -94,5 +94,46 @@ trainData.to_csv('csvtrain.csv',index=False)
 ```
 [Enter Client Name].upload_file('csvtrain.csv', ['Enter Bucket Name'], 'csvtrain.csv')
 ```
+Download the file from your Object Storage Service, and upload it to your Data Asset in the project as we did before.
+## Build a Machine Learning Model using SPSS Modelr
+### Create SPSS Modeler Flow
+1. On the same Assets page, scroll down to the Modeler flows.
+2. Click the `(+) New flow` icon.
+3. Under the 'New' tab, name your modeler 'Loan Eligibility Predictive model'.
+4. Click `Create`.
 
-## Create SPSS Modeler Flow
+### Add and Prepare Data
+1. Add data to the canvas using `Data Asset` node.
+2. Double click the node and click `Change Data Asset` to open the Asset Browser. Select csvtrain.csv then click `OK` and `Save`.
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/10.gif)
+
+3. Drag and Drop `Type ` node to configure variables type, from Field Operations palette.
+4. Double click the node or right click to open it. 
+- Choose Configure Types to read the metadata.
+- Change the Role from the drop down menu of [Loan_Status] from input to `output`. 
+- Change the Role drop down menu of [LoanID] from none to `Record ID`.
+- Click `Save`.
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/11.gif)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/12.gif)
+
+### Build Model
+The model predicts the loan eligibility of two classes (Either Y:Yes or N:No). Thus, the choice of algorithms fell into Bayesian networks since it is known to give good results for predicting classification problem.
+1. Splite Data into training and testing sets using `Partition` node, from Field Operations palette. It will be 
+- Double click Partition node to customize the partition size into 80:20, change the ratio in the `Training Partition` to 80% and `Testing Partition` to 20%.
+{image}
+
+2. Drag and drop the `Bayes Net` node, from the Modeling Palette.
+3. Double click the node to change settings. Check use custom field roles to assign PREDICTION_transformed as the target, and all the remaining attributes except Partition as input. When you finish, click `Save`.
+
+
+
+
+
+
+ 
+
+
+
+
+
+
