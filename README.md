@@ -75,7 +75,7 @@ Change Dataframe name from **df_data_1** to **trainData**.
 1. Check the data types of the variables using `dtypes`.
 
 
-![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/4.PNG)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/4.PNG){:height="300px" width="300px"}
 
 
 2. Check the sum of Null Values.
