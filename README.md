@@ -7,7 +7,7 @@ Thus, They target those applicants who are eligible for loan amount first.
 
 ## Learning Objectives
 After completing this tutorial, you will understand how to;
-- [Add and Prepare your data](#Add-and-Prepare-Data-in-SPSS)
+- [Add and Prepare your data](#Add-and-Prepare-Data)
 - [Build a Machine Learning Model](#Build-a-Machine-Learning-Model)
 - [Save the Model](#Save-the-Model)
 
@@ -41,7 +41,7 @@ The dataset is taking from [Analytics Vidhya](https://datahack.analyticsvidhya.c
 + **Property_Area**       Urban/ Semi Urban/ Rural
 + **Loan_Status**         Loan approved (Y/N)
 
-## Create a project in Watson Studio 
+## Create a Project in Watson Studio 
 From Watson Studio main page, click on `New project`. Choose `Complete` to get full functionalities. Once you enter your project name, click on `Create`.
 
 
@@ -63,20 +63,27 @@ Open `Find and add data`  right-side panel, drag and drop the dataset (.csv file
 
 ## Add and Prepare Data
 1. Add data to the canvas using `Data Asset` node.
-2. Double click the node and click `Change Data Asset` to open the Asset Browser. Select csvtrain.csv then click `OK` and `Save`.
+2. Double click the node and click `Change Data Asset` to open the Asset Browser. Select train.csv then click `OK` and `Save`.
 
 
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/10_1.gif)
 
 Let’s look into the summary statistics of our data using the `Data Audit` node. 
+
 3. Drag and drop the `Data Audit` node and connect it with the Data Asset node. After running the node you can see your audit report on right side panel. 
 
 
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/10_2.gif)
 
 We can see that some columns have missing value. Let’s drop these rows with null values using the `Select` node. 
+
+
 4. Drag and drop `Select` node, connect it with Data Asset node, right click and open the node.
+
+
 5. Select discard mode and provide below condition to remove rows with null values.
+
+
 ```
 (@NULL(Gender) or @NULL(Married) or @NULL(Dependents) or @NULL(Self_Employed) or @NULL(LoanAmount) or @NULL(Loan_Amount_Term) or @NULL(Credit_History))
 
@@ -87,9 +94,9 @@ We can see that some columns have missing value. Let’s drop these rows with nu
 
 Now our data is clean, and we can proceed building the model.
 
-### configure variables type
+### Configure Variables Type
 
-1. Drag and Drop `Type ` node to configure variables type, from Field Operations palette.
+1. Drag and Drop `Type` node to configure variables type, from Field Operations palette.
 2. Double click the node or right click to open it. 
 - Choose Configure Types to read the metadata.
 - Change the Role from the drop down menu of [Loan_Status] from input to `output`. 
@@ -150,7 +157,7 @@ At the end, you can build more models within the same canvas until you get the r
 
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/18.gif)
 
-In the Asset page under `Watson Machine Learning models` you can access your saved model, where you can deploy your model in later usage.
+In the Asset page under `Watson Machine Learning models` you can access your saved model, where you can deploy it later.
 
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/19.gif)
  
