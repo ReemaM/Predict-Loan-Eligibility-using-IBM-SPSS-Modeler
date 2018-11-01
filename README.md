@@ -1,4 +1,4 @@
-# Predict Loan Eligibility using Jupyter Notebook & IBM SPSS Modeler
+# Predict Loan Eligibility using Watson Studio
 Loans are the core business of lending companies. The main profit comes directly from the loan's interest. The lending companies grant loan after an intensive process of verification and validation. However, they still do not have an assurance if the applicant is able to repay the loan with no difficulties.
 
 ## Problem
@@ -7,14 +7,16 @@ Thus, They target those applicants who are eligible for loan amount first.
 
 ## Learning Objectives
 After completing this tutorial, you will understand how to;
-- [Prepare data with Jupyter Notebook](#Preparing-your-data-with-Jupyter-Notebook)
-- [Build a Machine Learning Model using SPSS Modelr](#Build-a-Machine-Learning-Model-using-SPSS-Modelr)
+- [Add and Prepare your data](#Add-and-Prepare-Data-in-SPSS)
+- [Build a Machine Learning Model](#Build-a-Machine-Learning-Model)
+- [Save the Model](#Save-the-Model)
 
 ## Prerequisites
 In order to complete this tutorial, you will need the following prerequisites:
 - [IBM Cloud](https://www.ibm.com/cloud/) account.
 - [Object Storage](https://console.bluemix.net/catalog/services/cloud-object-storage) Service.
-- [Watson Studio Service](https://console.bluemix.net/catalog/services/watson-studio) Service.
+- [Watson Studio](https://console.bluemix.net/catalog/services/watson-studio) Service.
+- [Machine Learning](https://console.bluemix.net/catalog/services/machine-learning) Service.
 
 ## Estimated time
 The overall time of reading and follwing this tutorial is 1 hour approx.
@@ -59,7 +61,7 @@ Open `Find and add data`  right-side panel, drag and drop the dataset (.csv file
 3. Under the 'New' tab, name your modeler 'Loan Eligibility Predictive model'.
 4. Click `Create`.
 
-## Add and Prepare Data in SPSS
+## Add and Prepare Data
 1. Add data to the canvas using `Data Asset` node.
 2. Double click the node and click `Change Data Asset` to open the Asset Browser. Select csvtrain.csv then click `OK` and `Save`.
 
@@ -97,7 +99,7 @@ Now our data is clean, and we can proceed building the model.
 ![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/11_1.gif)
 
 
-## Build a Machine Learning Model using SPSS Modelr
+## Build a Machine Learning Model
 
 ### Build Model
 The model predicts the loan eligibility of two classes (Either Y:Yes or N:No). Thus, the choice of algorithms fell into Bayesian networks since it is known to give good results for predicting classification problem.
@@ -107,7 +109,7 @@ The model predicts the loan eligibility of two classes (Either Y:Yes or N:No). T
 - Double click Partition node to customize the partition size into 80:20, change the ratio in the `Training Partition` to 80 and `Testing Partition` to 20.
 
 
-![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/13.gif)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/13_1.gif)
 
 
 
@@ -115,14 +117,14 @@ The model predicts the loan eligibility of two classes (Either Y:Yes or N:No). T
 3. Double click the node to change settings. Check `Use custom field roles` to assign Loan_Status as the target, and all the remaining attributes as input except Partition and Loan_ID. When you finish, click `Save`.
 
 
-![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/14.gif)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/14_1.gif)
 
 
 
 4. `Run` your Bayesian Network node, then you will see your model in the orange color node.
 
 
-![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/15.gif)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/15_1.gif)
 
 
 ### View the Model
@@ -130,11 +132,28 @@ The model predicts the loan eligibility of two classes (Either Y:Yes or N:No). T
 - Now you can see Network Graph and other model information here.
 
 
-![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/16.gif)
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/16_1.gif)
 
+### Evaluate the Performance of the Model
+1. Drag and drop the `Analysis` node from the Output section nd connect it with the model. 
+2. After running the node you can see your analysis report on right side panel. 
 
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/17.gif)
 
- At the end, you can build more models within the same canvas until you get the result you want.
+The analysis report shows we have achieved 82.3% accuracy on our test data set with this model.
+At the end, you can build more models within the same canvas until you get the result you want.
  
+## Save the Model
+1. Right-click on the Bayes Net node and select `Save branch` as model.
+2. Enter a name for the model. A machine learning service should be added automatically if you already created a one. 
+3. Click `Save`. 
+
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/18.gif)
+
+In the Asset page under `Watson Machine Learning models` you can access your saved model, where you can deploy your model in later usage.
+
+![Alt Text](https://github.com/Hisaah/Predict-Loan-Eligibility-using-IBM-SPSS-Modeler/blob/master/images/19.gif)
+ 
+
 ## Summary
-In this tutorial, you learned how to create a complete prediction model, from importing data, preparing the data, to training the model. You learned how to use Jupyter Notebook and export files from it, and learned how to use SPSS Modeler.
+In this tutorial, you learned how to create a complete predictive model, from importing data, preparing the data, to training the model and saving it. You learned how to use SPSS Modeler and export the model to Watson Machine Learning models.
